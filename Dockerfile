@@ -34,7 +34,7 @@ RUN mkdir -p /root/.ssh && touch /root/.ssh/authorized_keys && chmod 700 /root/.
 #ADD id_rsa.pub /root/.ssh/authorized_keys
 
 #Add PphMyAdmin
-RUN curl https://files.phpmyadmin.net/phpMyAdmin/4.0.10.20/phpMyAdmin-4.0.10.20-english.tar.gz --output /var/www/html/phpMyAdmin-4.0.10.20-english.tar.gz &&
+RUN curl https://files.phpmyadmin.net/phpMyAdmin/4.0.10.20/phpMyAdmin-4.0.10.20-english.tar.gz --output /var/www/html/phpMyAdmin-4.0.10.20-english.tar.gz && \
 cd /var/www/html/ && tar -zxf phpMyAdmin-4.0.10.20-english.tar.gz && mv phpMyAdmin-4.0.10.20-english pma && chown -R apache. pma && rm -f phpMyAdmin-4.0.10.20-english.tar.gz
 
 ADD httpd2.conf /etc/httpd/conf/httpd.conf

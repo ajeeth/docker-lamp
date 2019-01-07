@@ -33,6 +33,9 @@ RUN sed -ri 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config && echo 'root:change
 RUN mkdir -p /root/.ssh && touch /root/.ssh/authorized_keys && chmod 700 /root/.ssh
 #ADD id_rsa.pub /root/.ssh/authorized_keys
 
+#Add PphMyAdmin
+RUN curl https://files.phpmyadmin.net/phpMyAdmin/4.0.10.20/phpMyAdmin-4.0.10.20-english.tar.gz --output /var/www/html/phpMyAdmin-4.0.10.20-english.tar.gz &&
+cd /var/www/html/ && tar -zxf phpMyAdmin-4.0.10.20-english.tar.gz && mv phpMyAdmin-4.0.10.20-english pma && chown -R apache. pma && rm -f phpMyAdmin-4.0.10.20-english.tar.gz
 
 ADD phpinfo.php /var/www/html/
 ADD supervisord.conf /etc/

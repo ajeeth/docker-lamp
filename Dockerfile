@@ -1,8 +1,8 @@
-FROM centos:6.9
+FROM centos:7.7
 MAINTAINER ajeeth.samuel@gmail.com
 
 # install http
-RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 # install httpd
 RUN yum -y install httpd vim-enhanced bash-completion unzip
@@ -34,8 +34,8 @@ RUN mkdir -p /root/.ssh && touch /root/.ssh/authorized_keys && chmod 700 /root/.
 #ADD id_rsa.pub /root/.ssh/authorized_keys
 
 #Add PphMyAdmin
-RUN curl https://files.phpmyadmin.net/phpMyAdmin/4.0.10.20/phpMyAdmin-4.0.10.20-english.tar.gz --output /var/www/html/phpMyAdmin-4.0.10.20-english.tar.gz && \
-cd /var/www/html/ && tar -zxf phpMyAdmin-4.0.10.20-english.tar.gz && mv phpMyAdmin-4.0.10.20-english pma && chown -R apache. pma && rm -f phpMyAdmin-4.0.10.20-english.tar.gz
+RUN curl https://files.phpmyadmin.net/phpMyAdmin/4.9.1/phpMyAdmin-4.9.1-english.tar.gz --output /var/www/html/phpMyAdmin-4.9.1-english.tar.gz && \
+cd /var/www/html/ && tar -zxf phpMyAdmin-4.9.1-english.tar.gz && mv phpMyAdmin-4.9.1-english pma && chown -R apache. pma && rm -f phpMyAdmin-4.9.1-english.tar.gz
 
 ADD httpd2.conf /etc/httpd/conf/httpd.conf
 ADD phpinfo.php /var/www/html/

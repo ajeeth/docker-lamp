@@ -14,7 +14,7 @@ RUN (yum install -y yum-plugin-ovl || yum install -y yum-plugin-ovl)
 RUN yum install -y mysql mysql-server
 RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 # start mysqld to create initial tables
-RUN service mysqld start
+#RUN service mysqld start
 
 # install php
 RUN yum install -y php php-mysql php-imap php-cli php-mcrypt php-ncurses php-odbc php-pear php-common php-pdo php-mbstring php-ldap php-devel php-gd php-pecl-memcache php-pecl-Fileinfo php-pspell php-snmp php-xmlrpc php-xml

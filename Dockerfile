@@ -1,4 +1,4 @@
-FROM centos:7.6
+FROM centos:7
 MAINTAINER ajeeth.samuel@gmail.com
 
 # install http

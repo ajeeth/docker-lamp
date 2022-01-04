@@ -4,9 +4,6 @@ MAINTAINER ajeeth.samuel@gmail.com
 # install httpd
 RUN yum -y install httpd vim-enhanced bash-completion unzip
 
-# yum patch
-RUN (yum install -y yum-plugin-ovl || yum install -y yum-plugin-ovl)
-
 # install mysql
 RUN yum install -y mysql 
 RUN echo "NETWORKING=yes" > /etc/sysconfig/network

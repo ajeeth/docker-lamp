@@ -1,4 +1,4 @@
-FROM almalinux:8-minimal
+FROM almalinux:8.5
 MAINTAINER ajeeth.samuel@gmail.com
 
 # install httpd

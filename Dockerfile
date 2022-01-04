@@ -9,7 +9,7 @@ RUN yum install -y mysql
 RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 
 # install php
-RUN yum install -y php php-mysql php-imap php-cli php-soap php-mcrypt php-ncurses php-zip php-json php-odbc php-pear php-common php-pdo php-mbstring php-ldap php-soap php-opcache php-intl php-gd php-pecl-memcache php-pecl-Fileinfo php-pspell php-xmlrpc php-xml graphviz
+RUN yum install -y php php-cli php-soap php-zip php-json php-odbc php-pear php-common php-pdo php-mbstring php-ldap php-soap php-opcache php-intl php-gd php-xmlrpc php-xml graphviz
 
 # install supervisord
 RUN yum install -y python-pip && pip install "pip>=1.4,<1.5" --upgrade
